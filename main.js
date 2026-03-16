@@ -517,3 +517,214 @@ const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(sel
     }
   });
 })();
+
+/* =========================================================
+   15. EASYDAISY CHATBOT
+   - Branded assistant using your Akshovex logo
+   - Includes quick chips and beginner-friendly replies
+   ========================================================= */
+(function setupChatbot() {
+  const chatbotToggle = $("#akChatbotToggle");
+  const chatbot = $("#akChatbot");
+  const chatbotClose = $("#akChatbotClose");
+  const chatbotBody = $("#akChatbotBody");
+  const chatbotForm = $("#akChatbotForm");
+  const chatbotInput = $("#akChatbotInput");
+  const chatbotChips = $$("[data-chatbot-question]");
+
+  if (!chatbotToggle || !chatbot || !chatbotBody) return;
+
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const chatbotReplies = {
+    services:
+      "Akshovex offers cloud modernization, data platforms, cybersecurity, digital engineering, enterprise integration, and resilient delivery support.",
+    caseStudies:
+      "Our case studies focus on measurable business outcomes like cloud cost reduction, improved release quality, stronger cyber posture, and faster time to value.",
+    contact:
+      "You can contact Akshovex through the Contact page or email akshovex@gmail.com to start a consulting conversation.",
+    cloud:
+      "Our cloud work includes migration, landing zones, SRE, governance, observability, and cost optimization for enterprise environments.",
+    cybersecurity:
+      "Akshovex helps with cyber resilience, IAM, Zero Trust, secure architecture, AppSec, and risk-aware engineering delivery.",
+    data:
+      "We support data platform strategy, governed analytics, data engineering, reporting modernization, and enterprise-ready insights.",
+    greeting:
+      "Hello. I’m Easydaisy, your Akshovex virtual assistant. How can I help you today?",
+    default:
+      "I can help with Akshovex services, case studies, cloud modernization, cybersecurity, data platforms, and how to contact the team."
+  };
+
+  function openChatbot() {
+    chatbot.classList.add("is-open");
+    chatbot.setAttribute("aria-hidden", "false");
+    chatbotToggle.setAttribute("aria-expanded", "true");
+
+    if (chatbotInput) {
+      setTimeout(() => {
+        chatbotInput.focus();
+      }, reducedMotion ? 0 : 180);
+    }
+  }
+
+  function closeChatbot() {
+    chatbot.classList.remove("is-open");
+    chatbot.setAttribute("aria-hidden", "true");
+    chatbotToggle.setAttribute("aria-expanded", "false");
+  }
+
+  function escapeHtml(text) {
+    const div = document.createElement("div");
+    div.textContent = text;
+    return div.innerHTML;
+  }
+
+  function appendChatMessage(type, text) {
+    const message = document.createElement("div");
+    message.className = `ak-chatbot__message ak-chatbot__message--${type}`;
+
+    if (type === "bot") {
+      message.innerHTML = `
+        <div class="ak-chatbot__message-avatar">
+          <img src="logo-icon.png" alt="Easydaisy">
+        </div>
+        <div class="ak-chatbot__bubble">${escapeHtml(text)}</div>
+      `;
+    } else {
+      message.innerHTML = `
+        <div class="ak-chatbot__bubble">${escapeHtml(text)}</div>
+      `;
+    }
+
+    chatbotBody.appendChild(message);
+    chatbotBody.scrollTop = chatbotBody.scrollHeight;
+  }
+
+  function getBotReply(text) {
+    const value = text.toLowerCase();
+
+    if (
+      value.includes("hello") ||
+      value.includes("hi") ||
+      value.includes("hey")
+    ) {
+      return chatbotReplies.greeting;
+    }
+
+    if (
+      value.includes("service") ||
+      value.includes("offer") ||
+      value.includes("solution") ||
+      value.includes("capability")
+    ) {
+      return chatbotReplies.services;
+    }
+
+    if (
+      value.includes("case") ||
+      value.includes("study") ||
+      value.includes("project") ||
+      value.includes("result")
+    ) {
+      return chatbotReplies.caseStudies;
+    }
+
+    if (
+      value.includes("contact") ||
+      value.includes("email") ||
+      value.includes("call") ||
+      value.includes("talk") ||
+      value.includes("reach")
+    ) {
+      return chatbotReplies.contact;
+    }
+
+    if (
+      value.includes("cloud") ||
+      value.includes("migration") ||
+      value.includes("sre") ||
+      value.includes("finops")
+    ) {
+      return chatbotReplies.cloud;
+    }
+
+    if (
+      value.includes("security") ||
+      value.includes("cyber") ||
+      value.includes("zero trust") ||
+      value.includes("iam")
+    ) {
+      return chatbotReplies.cybersecurity;
+    }
+
+    if (
+      value.includes("data") ||
+      value.includes("analytics") ||
+      value.includes("ai") ||
+      value.includes("platform")
+    ) {
+      return chatbotReplies.data;
+    }
+
+    return chatbotReplies.default;
+  }
+
+  chatbotToggle.addEventListener("click", () => {
+    const isOpen = chatbot.classList.contains("is-open");
+    if (isOpen) {
+      closeChatbot();
+    } else {
+      openChatbot();
+    }
+  });
+
+  if (chatbotClose) {
+    chatbotClose.addEventListener("click", closeChatbot);
+  }
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeChatbot();
+    }
+  });
+
+  document.addEventListener("click", (event) => {
+    const clickedInsideChatbot = chatbot.contains(event.target);
+    const clickedToggle = chatbotToggle.contains(event.target);
+
+    if (!clickedInsideChatbot && !clickedToggle && chatbot.classList.contains("is-open")) {
+      closeChatbot();
+    }
+  });
+
+  chatbotChips.forEach((chip) => {
+    chip.addEventListener("click", () => {
+      const question = chip.getAttribute("data-chatbot-question");
+      if (!question) return;
+
+      openChatbot();
+      appendChatMessage("user", question);
+
+      setTimeout(() => {
+        appendChatMessage("bot", getBotReply(question));
+      }, reducedMotion ? 0 : 400);
+    });
+  });
+
+  if (chatbotForm && chatbotInput) {
+    chatbotForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const userText = chatbotInput.value.trim();
+      if (!userText) return;
+
+      openChatbot();
+      appendChatMessage("user", userText);
+      chatbotInput.value = "";
+
+      setTimeout(() => {
+        appendChatMessage("bot", getBotReply(userText));
+      }, reducedMotion ? 0 : 500);
+    });
+  }
+})();
