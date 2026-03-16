@@ -1757,16 +1757,18 @@ textarea.form-control {
   position: fixed;
   right: 22px;
   bottom: 88px;
-  width: 64px;
-  height: 64px;
-  border-radius: 20px;
-  background: linear-gradient(135deg, var(--primary), #4e80ff);
+  width: 84px;
+  height: 84px;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow-lg);
+  box-shadow: none;
   z-index: 1300;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  transition: transform var(--transition-fast), filter var(--transition-fast);
 }
 
 .ak-chatbot-toggle:hover {
