@@ -519,7 +519,7 @@ const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(sel
 })();
 
 /* =========================================================
-   15. EASYDAISY CHATBOT
+   15. ASK AKSHOVEX CHATBOT
    - Branded assistant using your Akshovex logo
    - Includes quick chips and beginner-friendly replies
    ========================================================= */
@@ -539,20 +539,30 @@ const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(sel
   const chatbotReplies = {
     services:
       "Akshovex offers cloud modernization, data platforms, cybersecurity, digital engineering, enterprise integration, and resilient delivery support.",
+
     caseStudies:
       "Our case studies focus on measurable business outcomes like cloud cost reduction, improved release quality, stronger cyber posture, and faster time to value.",
+
     contact:
       "You can contact Akshovex through the Contact page or email akshovex@gmail.com to start a consulting conversation.",
+
+    careers:
+      "For careers at Akshovex, please subscribe to our newsletter and follow our LinkedIn and social media pages for future openings, company updates, and hiring announcements.",
+
     cloud:
       "Our cloud work includes migration, landing zones, SRE, governance, observability, and cost optimization for enterprise environments.",
+
     cybersecurity:
       "Akshovex helps with cyber resilience, IAM, Zero Trust, secure architecture, AppSec, and risk-aware engineering delivery.",
+
     data:
       "We support data platform strategy, governed analytics, data engineering, reporting modernization, and enterprise-ready insights.",
+
     greeting:
-      "Hello. I’m Easydaisy, your Akshovex virtual assistant. How can I help you today?",
+      "Hello. I’m Ask Akshovex, your Akshovex virtual assistant. How can I help you today?",
+
     default:
-      "I can help with Akshovex services, case studies, cloud modernization, cybersecurity, data platforms, and how to contact the team."
+      "I can help with Akshovex services, case studies, careers, cloud modernization, cybersecurity, data platforms, and how to contact the team."
   };
 
   function openChatbot() {
@@ -586,7 +596,7 @@ const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(sel
     if (type === "bot") {
       message.innerHTML = `
         <div class="ak-chatbot__message-avatar">
-          <img src="logo-icon.png" alt="Easydaisy">
+          <img src="logo-icon.png" alt="Ask Akshovex">
         </div>
         <div class="ak-chatbot__bubble">${escapeHtml(text)}</div>
       `;
@@ -609,6 +619,18 @@ const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(sel
       value.includes("hey")
     ) {
       return chatbotReplies.greeting;
+    }
+
+    if (
+      value.includes("career") ||
+      value.includes("job") ||
+      value.includes("jobs") ||
+      value.includes("hiring") ||
+      value.includes("vacancy") ||
+      value.includes("work with") ||
+      value.includes("join")
+    ) {
+      return chatbotReplies.careers;
     }
 
     if (
