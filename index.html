@@ -736,6 +736,88 @@
     </div>
   </footer>
 
+  <!-- Easydaisy Chatbot -->
+  <button
+    class="ak-chatbot-toggle"
+    id="akChatbotToggle"
+    type="button"
+    aria-label="Open Easydaisy assistant"
+    aria-controls="akChatbot"
+    aria-expanded="false"
+  >
+    <span class="ak-chatbot-toggle__ring"></span>
+    <span class="ak-chatbot-toggle__logo">
+      <img src="logo-icon.png" alt="Akshovex assistant logo">
+    </span>
+  </button>
+
+  <aside
+    class="ak-chatbot"
+    id="akChatbot"
+    aria-label="Easydaisy chatbot"
+    aria-hidden="true"
+  >
+    <div class="ak-chatbot__header">
+      <div class="ak-chatbot__brand">
+        <div class="ak-chatbot__avatar">
+          <img src="logo-icon.png" alt="Easydaisy">
+          <span class="ak-chatbot__status"></span>
+        </div>
+
+        <div>
+          <h3 class="ak-chatbot__title">Easydaisy</h3>
+          <p class="ak-chatbot__subtitle">Akshovex virtual assistant</p>
+        </div>
+      </div>
+
+      <button
+        class="ak-chatbot__close"
+        id="akChatbotClose"
+        type="button"
+        aria-label="Close chatbot"
+      >
+        ×
+      </button>
+    </div>
+
+    <div class="ak-chatbot__body" id="akChatbotBody">
+      <div class="ak-chatbot__message ak-chatbot__message--bot">
+        <div class="ak-chatbot__message-avatar">
+          <img src="logo-icon.png" alt="Easydaisy">
+        </div>
+        <div class="ak-chatbot__bubble">
+          Hello, I’m Easydaisy. I can help you explore Akshovex services, case studies, contact options, and enterprise capabilities.
+        </div>
+      </div>
+    </div>
+
+    <div class="ak-chatbot__quick">
+      <button class="ak-chatbot__chip" type="button" data-chatbot-question="What services do you offer?">
+        Services
+      </button>
+      <button class="ak-chatbot__chip" type="button" data-chatbot-question="Show me case studies">
+        Case Studies
+      </button>
+      <button class="ak-chatbot__chip" type="button" data-chatbot-question="How can I contact Akshovex?">
+        Contact
+      </button>
+    </div>
+
+    <form class="ak-chatbot__form" id="akChatbotForm">
+      <label class="visually-hidden" for="akChatbotInput">Type your message</label>
+      <input
+        class="ak-chatbot__input"
+        id="akChatbotInput"
+        type="text"
+        placeholder="Ask Easydaisy something..."
+        autocomplete="off"
+      >
+      <button class="ak-chatbot__send" type="submit" aria-label="Send message">
+        Send
+      </button>
+    </form>
+  </aside>
+
   <script src="main.js" defer></script>
 </body>
 </html>
