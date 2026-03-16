@@ -1772,21 +1772,17 @@ textarea.form-control {
 }
 
 .ak-chatbot-toggle:hover {
-  transform: translateY(-3px);
+  transform: translateY(-3px) scale(1.02);
+  filter: drop-shadow(0 14px 28px rgba(47, 107, 255, 0.18));
 }
 
 .ak-chatbot-toggle__ring {
-  position: absolute;
-  inset: -6px;
-  border-radius: 24px;
-  background: linear-gradient(135deg, rgba(47,107,255,0.3), rgba(35,213,195,0.3));
-  filter: blur(10px);
-  opacity: .5;
+  display: none;
 }
 
 .ak-chatbot-toggle__logo {
-  width: 36px;
-  height: 36px;
+  width: 84px;
+  height: 84px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1794,7 +1790,10 @@ textarea.form-control {
 
 .ak-chatbot-toggle__logo img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background: transparent;
 }
 
 /* CHAT WINDOW */
@@ -1834,7 +1833,7 @@ textarea.form-control {
   justify-content: space-between;
   align-items: center;
   background:
-    linear-gradient(135deg, rgba(47,107,255,0.08), rgba(35,213,195,0.05)),
+    linear-gradient(135deg, rgba(47, 107, 255, 0.08), rgba(35, 213, 195, 0.05)),
     var(--surface);
   border-bottom: 1px solid var(--border);
 }
@@ -1850,14 +1849,17 @@ textarea.form-control {
   width: 42px;
   height: 42px;
   border-radius: 12px;
-  background: rgba(47,107,255,0.1);
+  background: rgba(47, 107, 255, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .ak-chatbot__avatar img {
-  width: 26px;
+  width: 82%;
+  height: 82%;
+  object-fit: contain;
+  display: block;
 }
 
 .ak-chatbot__status {
@@ -1911,14 +1913,17 @@ textarea.form-control {
   width: 30px;
   height: 30px;
   border-radius: 10px;
-  background: rgba(47,107,255,0.08);
+  background: rgba(47, 107, 255, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .ak-chatbot__message-avatar img {
-  width: 18px;
+  width: 82%;
+  height: 82%;
+  object-fit: contain;
+  display: block;
 }
 
 .ak-chatbot__bubble {
@@ -1930,7 +1935,7 @@ textarea.form-control {
 }
 
 .ak-chatbot__message--bot .ak-chatbot__bubble {
-  background: rgba(47,107,255,0.08);
+  background: rgba(47, 107, 255, 0.08);
 }
 
 .ak-chatbot__message--user .ak-chatbot__bubble {
@@ -1953,12 +1958,12 @@ textarea.form-control {
   font-size: 12px;
   border-radius: 999px;
   border: 1px solid var(--border);
-  background: rgba(47,107,255,0.06);
+  background: rgba(47, 107, 255, 0.06);
   font-weight: 600;
 }
 
 .ak-chatbot__chip:hover {
-  background: rgba(47,107,255,0.1);
+  background: rgba(47, 107, 255, 0.1);
 }
 
 /* INPUT */
@@ -1990,7 +1995,6 @@ textarea.form-control {
 /* MOBILE */
 
 @media (max-width: 575px) {
-
   .ak-chatbot {
     right: 12px;
     bottom: 140px;
@@ -2000,25 +2004,12 @@ textarea.form-control {
   .ak-chatbot-toggle {
     right: 16px;
     bottom: 76px;
+    width: 76px;
+    height: 76px;
   }
 
-}
-/* Fix chatbot logo size */
-
-.ak-chatbot-toggle__logo img {
-  width: 70%;
-  height: 70%;
-  object-fit: contain;
-}
-
-.ak-chatbot__avatar img {
-  width: 70%;
-  height: 70%;
-  object-fit: contain;
-}
-
-.ak-chatbot__message-avatar img {
-  width: 70%;
-  height: 70%;
-  object-fit: contain;
+  .ak-chatbot-toggle__logo {
+    width: 76px;
+    height: 76px;
+  }
 }
