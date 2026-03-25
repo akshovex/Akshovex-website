@@ -2411,3 +2411,25 @@ html[data-theme="dark"] .benefit-card {
     width: 100%;
   }
 }
+.footer-collab {
+  margin-top: 20px;
+  padding: 16px 18px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-collab__label {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 6px;
+}
+
+.footer-collab__name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+}
