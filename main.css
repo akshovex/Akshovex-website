@@ -2411,101 +2411,35 @@ html[data-theme="dark"] .benefit-card {
     width: 100%;
   }
 }
-<footer class="site-footer" aria-label="Footer">
-  <div class="container">
-    <div class="row gy-4">
+.footer-collab-strip {
+  margin-top: 32px;
+  padding: 18px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
 
-      <!-- Brand -->
-      <div class="col-lg-4">
-        <div class="footer-brand">
-          <div class="footer-brand__top">
-            <span class="brand__mark">
-              <img src="logo-full.png" alt="Akshovex logo">
-            </span>
+.footer-collab-strip__label {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
 
-            <div>
-              <div class="footer-brand__name">Akshovex</div>
-              <div class="footer-brand__tag">Engineering resilient digital enterprises.</div>
-            </div>
-          </div>
+.footer-collab-strip__name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+}
 
-          <p class="footer-brand__text">
-            Premium technology consulting and engineering for cloud, cybersecurity, data platforms, and digital delivery.
-          </p>
-        </div>
-      </div>
-
-      <!-- Company -->
-      <div class="col-6 col-lg-2">
-        <h3 class="footer-title">Company</h3>
-        <ul class="footer-list">
-          <li><a href="about.html">About</a></li>
-          <li><a href="case-studies.html">Case Studies</a></li>
-          <li><a href="blog.html">Blog</a></li>
-
-          <!-- Careers + inline collaboration -->
-          <li class="footer-careers-collab">
-            <a href="careers.html">Careers</a>
-            <span class="footer-collab-badge">YASH Technologies</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Services -->
-      <div class="col-6 col-lg-2">
-        <h3 class="footer-title">Services</h3>
-        <ul class="footer-list">
-          <li><a href="services.html">Cloud &amp; SRE</a></li>
-          <li><a href="services.html">Data &amp; AI</a></li>
-          <li><a href="services.html">Cybersecurity</a></li>
-        </ul>
-      </div>
-
-      <!-- Contact -->
-      <div class="col-lg-4">
-        <h3 class="footer-title">Contact</h3>
-        <ul class="footer-list footer-contact-list">
-          <li>
-            <a href="mailto:akshovex@gmail.com">
-              <svg class="icon icon--sm" aria-hidden="true">
-                <use href="#icon-mail"></use>
-              </svg>
-              <span>akshovex@gmail.com</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="contact.html">
-              <svg class="icon icon--sm" aria-hidden="true">
-                <use href="#icon-arrow"></use>
-              </svg>
-              <span>Get in touch</span>
-            </a>
-          </li>
-
-          <li>
-            <span class="footer-contact-item">
-              <svg class="icon icon--sm" aria-hidden="true">
-                <use href="#icon-location"></use>
-              </svg>
-              <span>New York • London • Bengaluru</span>
-            </span>
-          </li>
-        </ul>
-      </div>
-
-    </div>
-
-    <!-- Bottom -->
-    <div class="site-footer__bottom">
-      <small>© <span id="year"></span> Akshovex. All rights reserved.</small>
-
-      <a class="text-link" href="#top">
-        Back to top
-        <svg class="icon icon--sm" aria-hidden="true">
-          <use href="#icon-arrow-up"></use>
-        </svg>
-      </a>
-    </div>
-  </div>
-</footer>
+@media (max-width: 767px) {
+  .footer-collab-strip {
+    flex-direction: column;
+    gap: 6px;
+    padding: 16px 0;
+  }
+}
