@@ -1999,9 +1999,9 @@ textarea.form-control {
 
 /* MOBILE */
 
-/* ================= MOBILE CHATBOT FINAL ================= */
+/* ================= CHATBOT TABLET + MOBILE FIXED ================= */
 
-@media (max-width: 575px) {
+@media (max-width: 767px) {
 
   .ak-chatbot {
     right: 12px;
@@ -2052,6 +2052,37 @@ textarea.form-control {
     border-radius: 12px;
   }
 
+  .ak-chatbot-toggle {
+    position: fixed;
+    right: 12px;
+    bottom: 12px;
+    width: 68px;
+    height: 68px;
+    z-index: 1200;
+  }
+
+  .ak-chatbot-toggle__logo {
+    width: 68px;
+    height: 68px;
+  }
+}
+
+/* EXTRA SMALL DEVICES */
+
+@media (max-width: 420px) {
+  .ak-chatbot__bubble {
+    max-width: 100%;
+  }
+
+  .ak-chatbot__quick {
+    justify-content: flex-start;
+  }
+
+  .ak-chatbot__send {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+}
   /* FLOATING BUTTON (fixed position) */
   .ak-chatbot-toggle {
     position: fixed;
