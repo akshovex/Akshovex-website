@@ -2016,7 +2016,6 @@ textarea.form-control {
 /* =========================================================
    GLOBAL PREMIUM PAGE SYSTEM
    Inner pages + careers page ready
-   Paste at the end of main.css
    ========================================================= */
 
 /* Page hero improvements */
@@ -2169,6 +2168,12 @@ html[data-theme="dark"] .feature-card {
   margin-bottom: 0;
 }
 
+.cta-band__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 /* Careers page styles */
 .jobs-list {
   display: grid;
@@ -2313,6 +2318,52 @@ html[data-theme="dark"] .benefit-card {
   font-size: 15px;
 }
 
+/* Careers page small additions */
+#careersForm.card {
+  padding: 30px;
+}
+
+.job-card .btn,
+.cta-band .btn {
+  width: auto;
+}
+
+/* Header width fix for medium desktop */
+.site-nav__actions .btn--primary {
+  min-width: 170px;
+  padding-inline: 16px;
+}
+
+@media (max-width: 1399px) {
+  .site-header__inner {
+    gap: 18px;
+  }
+
+  .site-nav__menu {
+    gap: 2px;
+  }
+
+  .site-nav__link {
+    padding: 12px 10px;
+    font-size: 15px;
+  }
+
+  .site-nav__actions {
+    gap: 10px;
+    margin-left: 10px;
+  }
+
+  .site-nav__actions .btn--primary {
+    min-width: 164px;
+    padding-inline: 15px;
+  }
+
+  .btn--theme {
+    min-width: 118px;
+    padding-inline: 14px;
+  }
+}
+
 /* Responsive additions for new shared sections */
 @media (max-width: 991px) {
   .process-grid {
@@ -2353,5 +2404,10 @@ html[data-theme="dark"] .benefit-card {
   .job-card__top {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .job-card .btn,
+  .cta-band .btn {
+    width: 100%;
   }
 }
