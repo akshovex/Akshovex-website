@@ -1801,7 +1801,7 @@ textarea.form-control {
 .ak-chatbot {
   position: fixed;
   right: 22px;
-  bottom: 160px;
+  bottom: 110px;
   width: 360px;
   max-width: calc(100vw - 24px);
   border-radius: 24px;
