@@ -750,3 +750,91 @@ const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(sel
     });
   }
 })();
+/* =========================================================
+   16. CAREERS FORM SUBMISSION
+   ========================================================= */
+(function setupCareersForm() {
+  const form = $("#careersForm");
+  const status = $("#careersFormStatus");
+
+  if (!form || !status) return;
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const name = $("#careerName", form);
+    const email = $("#careerEmail", form);
+    const role = $("#careerRole", form);
+    const message = $("#careerMessage", form);
+
+    let hasError = false;
+    status.textContent = "";
+    status.className = "form-status";
+
+    [name, email, role, message].forEach((field) => {
+      if (field) field.setCustomValidity("");
+    });
+
+    if (!name.value.trim()) {
+      name.setCustomValidity("Please enter your full name.");
+      hasError = true;
+    }
+
+    if (!email.value.trim()) {
+      email.setCustomValidity("Please enter your email address.");
+      hasError = true;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
+      email.setCustomValidity("Please enter a valid email address.");
+      hasError = true;
+    }
+
+    if (!role.value.trim()) {
+      role.setCustomValidity("Please select a role.");
+      hasError = true;
+    }
+
+    if (!message.value.trim()) {
+      message.setCustomValidity("Please tell us about yourself.");
+      hasError = true;
+    }
+
+    if (hasError) {
+      form.reportValidity();
+      status.textContent = "Please complete all required fields correctly.";
+      status.classList.add("is-error");
+      return;
+    }
+
+    const formData = {
+      name: $("#careerName", form)?.value.trim() || "",
+      email: $("#careerEmail", form)?.value.trim() || "",
+      phone: $("#careerPhone", form)?.value.trim() || "",
+      role: $("#careerRole", form)?.value || "",
+      profile: $("#careerLinkedin", form)?.value.trim() || "",
+      message: $("#careerMessage", form)?.value.trim() || ""
+    };
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        status.textContent = "Application submitted successfully. Thank you.";
+        status.classList.add("is-success");
+        form.reset();
+      } else {
+        status.textContent = "Application could not be submitted. Please try again.";
+        status.classList.add("is-error");
+      }
+    } catch (error) {
+      status.textContent = "Something went wrong. Please try again.";
+      status.classList.add("is-error");
+    }
+  });
+})();
