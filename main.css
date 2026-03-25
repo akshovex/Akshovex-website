@@ -1753,10 +1753,15 @@ textarea.form-control {
    Enterprise branded assistant
    ========================================================= */
 
+/* =========================================================
+   EASYDAISY CHATBOT
+   Enterprise branded assistant
+   ========================================================= */
+
 .ak-chatbot-toggle {
   position: fixed;
   right: 22px;
-  bottom: 88px;
+  bottom: 20px; /* changed from 88px */
   width: 84px;
   height: 84px;
   padding: 0;
@@ -1767,7 +1772,7 @@ textarea.form-control {
   align-items: center;
   justify-content: center;
   box-shadow: none;
-  z-index: 1300;
+  z-index: 1200; /* lower than chat window */
   transition: transform var(--transition-fast), filter var(--transition-fast);
 }
 
@@ -1809,7 +1814,7 @@ textarea.form-control {
   border: 1px solid var(--border);
   box-shadow: var(--shadow-lg);
   overflow: hidden;
-  z-index: 1299;
+  z-index: 1400; /* higher than toggle */
   opacity: 0;
   visibility: hidden;
   transform: translateY(16px);
