@@ -259,6 +259,7 @@
             <a class="site-nav__link" href="industries.html">Industries</a>
             <a class="site-nav__link" href="case-studies.html">Case Studies</a>
             <a class="site-nav__link is-active" href="blog.html">Blog</a>
+            <a class="site-nav__link" href="careers.html">Careers</a>
             <a class="site-nav__link" href="contact.html">Contact</a>
 
             <div class="site-nav__actions">
@@ -565,12 +566,19 @@
             </p>
           </div>
 
-          <form class="newsletter__form" id="newsletterForm" novalidate>
+          <form
+            class="newsletter__form"
+            id="newsletterForm"
+            action="https://formspree.io/f/meerzjlp"
+            method="POST"
+            novalidate
+          >
             <label class="visually-hidden" for="newsletterEmail">Email address</label>
             <input
               class="input input--sm"
               type="email"
               id="newsletterEmail"
+              name="email"
               placeholder="you@company.com"
               required
             />
@@ -596,6 +604,9 @@
         <div class="col-lg-4">
           <div class="footer-brand">
             <div class="footer-brand__top">
+              <span class="brand__mark">
+                <img src="logo-full.png" alt="Akshovex logo">
+              </span>
               <div>
                 <div class="footer-brand__name">Akshovex</div>
                 <div class="footer-brand__tag">Engineering resilient digital enterprises.</div>
@@ -615,6 +626,7 @@
             <li><a href="about.html">About</a></li>
             <li><a href="case-studies.html">Case Studies</a></li>
             <li><a href="blog.html">Blog</a></li>
+            <li><a href="careers.html">Careers</a></li>
           </ul>
         </div>
 
