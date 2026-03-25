@@ -2412,11 +2412,19 @@ html[data-theme="dark"] .benefit-card {
   }
 }
 .footer-collab {
-  margin-top: 20px;
-  padding: 16px 18px;
-  border-radius: 12px;
+  margin-top: 28px;
+  padding: 18px 22px;
+  border-radius: 16px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-collab--full {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .footer-collab__label {
@@ -2428,8 +2436,21 @@ html[data-theme="dark"] .benefit-card {
   margin-bottom: 6px;
 }
 
+.footer-collab__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .footer-collab__name {
   font-size: 16px;
   font-weight: 600;
   color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .footer-collab--full {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
