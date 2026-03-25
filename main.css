@@ -2414,19 +2414,25 @@ html[data-theme="dark"] .benefit-card {
 .footer-collab-strip {
   margin-top: 30px;
   padding: 16px 0;
-
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
-
   font-size: 15px;
-  color: rgba(255,255,255,0.85);
-
-  border-top: 1px solid rgba(255,255,255,0.08);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .footer-collab-strip strong {
   font-weight: 600;
   color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .footer-collab-strip {
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+  }
 }
