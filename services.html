@@ -7,7 +7,7 @@
   <title>Services — Akshovex</title>
   <meta
     name="description"
-    content="Explore Akshovex services across cloud, data, cybersecurity, engineering, managed delivery, and architecture advisory."
+    content="Explore Akshovex services across cloud, data, cybersecurity, engineering, managed delivery, architecture advisory, and program, design, and project management."
   />
   <meta name="theme-color" content="#2F6BFF" />
   <meta name="robots" content="index, follow" />
@@ -16,7 +16,7 @@
   <meta property="og:title" content="Services — Akshovex" />
   <meta
     property="og:description"
-    content="Enterprise-grade consulting and engineering services built for modern organizations."
+    content="Enterprise-grade consulting, engineering, and delivery services built for modern organizations."
   />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.akshovex.com/services.html" />
@@ -36,6 +36,330 @@
   />
 
   <link rel="stylesheet" href="main.css" />
+
+  <style>
+    /* ==========================================
+       Akshovex - Program, Design & Project Management
+       Section only
+    ========================================== */
+
+    .akx-pdpm-section {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .akx-pdpm-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(47, 107, 255, 0.10), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(47, 107, 255, 0.06), transparent 26%);
+      pointer-events: none;
+    }
+
+    .akx-pdpm-section .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .akx-pdpm-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.45rem 0.85rem;
+      margin-bottom: 1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(47, 107, 255, 0.16);
+      background: rgba(47, 107, 255, 0.08);
+      color: var(--color-primary, #2F6BFF);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .akx-pdpm-intro {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      padding: clamp(1.3rem, 2vw, 2rem);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      border-radius: 24px;
+      background:
+        linear-gradient(135deg, rgba(47, 107, 255, 0.05), rgba(255, 255, 255, 0) 55%),
+        rgba(255, 255, 255, 0.84);
+      box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .akx-pdpm-intro__title {
+      margin: 0 0 0.9rem;
+      font-size: clamp(1.45rem, 2vw, 2rem);
+      line-height: 1.25;
+      font-weight: 700;
+      color: var(--color-heading, #0f172a);
+    }
+
+    .akx-pdpm-intro__text {
+      margin: 0 0 1rem;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--color-text, #475569);
+    }
+
+    .akx-pdpm-intro__text:last-child {
+      margin-bottom: 0;
+    }
+
+    .akx-pdpm-intro__panel {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .akx-pdpm-metric {
+      padding: 1.15rem 1.2rem;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      box-shadow: 0 12px 34px rgba(15, 23, 42, 0.06);
+    }
+
+    .akx-pdpm-metric h4 {
+      margin: 0 0 0.45rem;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-heading, #0f172a);
+    }
+
+    .akx-pdpm-metric p {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--color-text, #475569);
+    }
+
+    .akx-pdpm-main {
+      margin-bottom: 0.5rem;
+    }
+
+    .akx-pdpm-card {
+      position: relative;
+      padding: clamp(1.4rem, 2vw, 2rem);
+      border-radius: 24px;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.96), rgba(248,250,252,0.96)),
+        linear-gradient(135deg, rgba(47, 107, 255, 0.05), transparent);
+      box-shadow: 0 18px 48px rgba(15, 23, 42, 0.08);
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .akx-pdpm-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(47, 107, 255, 0.18);
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+    }
+
+    .akx-pdpm-card__icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 68px;
+      height: 68px;
+      margin-bottom: 1.1rem;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(47, 107, 255, 0.12), rgba(47, 107, 255, 0.04));
+      border: 1px solid rgba(47, 107, 255, 0.12);
+      color: var(--color-primary, #2F6BFF);
+    }
+
+    .akx-pdpm-card__icon .icon {
+      width: 28px;
+      height: 28px;
+    }
+
+    .akx-pdpm-card__eyebrow {
+      display: inline-block;
+      margin-bottom: 0.7rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-primary, #2F6BFF);
+    }
+
+    .akx-pdpm-card__title {
+      margin: 0 0 0.9rem;
+      font-size: clamp(1.25rem, 1.5vw, 1.6rem);
+      line-height: 1.3;
+      font-weight: 700;
+      color: var(--color-heading, #0f172a);
+    }
+
+    .akx-pdpm-card__text {
+      margin: 0 0 1.1rem;
+      font-size: 0.98rem;
+      line-height: 1.8;
+      color: var(--color-text, #475569);
+    }
+
+    .akx-pdpm-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .akx-pdpm-list li {
+      position: relative;
+      padding-left: 1.3rem;
+      margin-bottom: 0.72rem;
+      line-height: 1.7;
+      color: var(--color-heading, #0f172a);
+    }
+
+    .akx-pdpm-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .akx-pdpm-list li::before {
+      content: "";
+      position: absolute;
+      top: 0.72rem;
+      left: 0;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--color-primary, #2F6BFF);
+      box-shadow: 0 0 0 6px rgba(47, 107, 255, 0.08);
+    }
+
+    .akx-pdpm-features {
+      margin-top: 1.5rem;
+    }
+
+    .akx-pdpm-mini {
+      height: 100%;
+      padding: 1.35rem 1.15rem;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      box-shadow: 0 14px 36px rgba(15, 23, 42, 0.06);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .akx-pdpm-mini:hover {
+      transform: translateY(-4px);
+      border-color: rgba(47, 107, 255, 0.16);
+      box-shadow: 0 18px 42px rgba(15, 23, 42, 0.09);
+    }
+
+    .akx-pdpm-mini__icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      margin-bottom: 1rem;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(47, 107, 255, 0.12), rgba(47, 107, 255, 0.04));
+      border: 1px solid rgba(47, 107, 255, 0.10);
+      color: var(--color-primary, #2F6BFF);
+    }
+
+    .akx-pdpm-mini__icon .icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    .akx-pdpm-mini__title {
+      margin: 0 0 0.55rem;
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--color-heading, #0f172a);
+    }
+
+    .akx-pdpm-mini__text {
+      margin: 0;
+      font-size: 0.94rem;
+      line-height: 1.75;
+      color: var(--color-text, #475569);
+    }
+
+    .akx-pdpm-cta {
+      margin-top: 2rem;
+      padding: clamp(1.35rem, 2vw, 2rem);
+      border-radius: 24px;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      background:
+        linear-gradient(135deg, rgba(47, 107, 255, 0.08), rgba(47, 107, 255, 0.02)),
+        #ffffff;
+      box-shadow: 0 18px 48px rgba(15, 23, 42, 0.08);
+    }
+
+    .akx-pdpm-cta__title {
+      margin: 0 0 0.75rem;
+      font-size: clamp(1.3rem, 1.8vw, 1.8rem);
+      line-height: 1.3;
+      font-weight: 700;
+      color: var(--color-heading, #0f172a);
+    }
+
+    .akx-pdpm-cta__text {
+      color: var(--color-text, #475569);
+      line-height: 1.8;
+    }
+
+    .akx-pdpm-cta__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      justify-content: flex-start;
+    }
+
+    @media (min-width: 992px) {
+      .akx-pdpm-cta__actions {
+        justify-content: flex-end;
+        align-items: center;
+        height: 100%;
+      }
+    }
+
+    @media (max-width: 991.98px) {
+      .akx-pdpm-intro,
+      .akx-pdpm-card,
+      .akx-pdpm-cta {
+        border-radius: 22px;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .akx-pdpm-intro,
+      .akx-pdpm-card,
+      .akx-pdpm-cta {
+        padding: 1.15rem;
+      }
+
+      .akx-pdpm-mini {
+        padding: 1.1rem;
+      }
+
+      .akx-pdpm-card__icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 16px;
+      }
+
+      .akx-pdpm-mini__icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 14px;
+      }
+
+      .akx-pdpm-cta__actions .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -297,7 +621,7 @@
           </div>
           <p class="section-heading__text reveal">
             Our services are designed to align technical change with governance,
-            commercial value, security, and operational resilience.
+            commercial value, security, operational resilience, and structured delivery execution.
           </p>
         </div>
       </div>
@@ -435,6 +759,207 @@
       </div>
     </section>
 
+    <section class="section akx-pdpm-section">
+      <div class="container">
+        <div class="section-heading section-heading--narrow">
+          <p class="section-heading__kicker reveal">Program, Design &amp; Project Management</p>
+          <div class="section-heading__title-row reveal">
+            <span class="icon-badge icon-badge--sm" aria-hidden="true">
+              <svg class="icon">
+                <use href="#icon-enterprise"></use>
+              </svg>
+            </span>
+            <h2 class="section-heading__title mb-0">
+              Structured delivery support for complex programs, design workflows, and project execution.
+            </h2>
+          </div>
+          <p class="section-heading__text reveal">
+            We provide integrated program, design, and project management services that strengthen planning, documentation, coordination, and delivery oversight across digital, infrastructure, and engineering initiatives worldwide.
+          </p>
+        </div>
+
+        <div class="akx-pdpm-intro reveal">
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-7">
+              <div class="akx-pdpm-intro__content">
+                <span class="akx-pdpm-pill">Integrated delivery discipline</span>
+                <h3 class="akx-pdpm-intro__title">
+                  From planning and technical documentation to procurement, reporting, and quality control.
+                </h3>
+                <p class="akx-pdpm-intro__text">
+                  We provide structured program, design, and project management services to support successful delivery across digital and infrastructure initiatives. Our approach integrates planning discipline, technical documentation, and execution governance to ensure outcomes are delivered with clarity, control, and consistency.
+                </p>
+                <p class="akx-pdpm-intro__text">
+                  We support organizations in managing complex projects through schedule planning, resource optimization, and risk management. Using industry-standard tools such as Microsoft Project and modern delivery frameworks, we enable visibility and predictability across the full project lifecycle.
+                </p>
+                <p class="akx-pdpm-intro__text">
+                  Our capabilities include design coordination, technical documentation, and drawing support to ensure alignment between planning and execution. We assist in cost estimation, bid preparation, and quantity analysis, supporting informed decisions across engineering, infrastructure, and enterprise transformation programs.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-5">
+              <div class="akx-pdpm-intro__panel">
+                <div class="akx-pdpm-metric">
+                  <h4>Lifecycle visibility</h4>
+                  <p>Clear oversight from planning and design through procurement, execution, and close-out.</p>
+                </div>
+                <div class="akx-pdpm-metric">
+                  <h4>Execution control</h4>
+                  <p>Structured reporting, governance, quality tracking, and risk management for dependable delivery.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4 akx-pdpm-main">
+          <div class="col-lg-6">
+            <article class="akx-pdpm-card reveal h-100">
+              <div class="akx-pdpm-card__icon">
+                <svg class="icon" aria-hidden="true">
+                  <use href="#icon-clock"></use>
+                </svg>
+              </div>
+
+              <span class="akx-pdpm-card__eyebrow">Planning, Governance &amp; Controls</span>
+              <h3 class="akx-pdpm-card__title">
+                Program governance, project planning, scheduling, reporting, and delivery control
+              </h3>
+              <p class="akx-pdpm-card__text">
+                We help organizations establish the governance, planning, and reporting structures needed to manage complex delivery environments with precision and transparency. This includes program governance, project planning, schedule control, executive reporting, resource alignment, and risk and quality management across delivery teams.
+              </p>
+
+              <ul class="akx-pdpm-list">
+                <li>Project planning and scheduling using MS Project and Primavera fundamentals</li>
+                <li>Program governance and delivery tracking</li>
+                <li>Progress monitoring, dashboards, and executive reporting</li>
+                <li>Risk assessment, mitigation planning, and issue control</li>
+                <li>Quality assurance, compliance tracking, and scope change management</li>
+                <li>Resource planning and workforce coordination</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="col-lg-6">
+            <article class="akx-pdpm-card reveal h-100">
+              <div class="akx-pdpm-card__icon">
+                <svg class="icon" aria-hidden="true">
+                  <use href="#icon-platform"></use>
+                </svg>
+              </div>
+
+              <span class="akx-pdpm-card__eyebrow">Design, Commercial &amp; Procurement Support</span>
+              <h3 class="akx-pdpm-card__title">
+                Design coordination, BOQ, tender support, drawings, procurement, and vendor management
+              </h3>
+              <p class="akx-pdpm-card__text">
+                We provide structured support across design coordination, technical documentation, commercial preparation, and procurement workflows. Our approach improves alignment between planning, documentation, quantity analysis, vendor coordination, and execution readiness across infrastructure, engineering, and enterprise transformation programs.
+              </p>
+
+              <ul class="akx-pdpm-list">
+                <li>BOQ preparation, validation, and quantity take-offs</li>
+                <li>Bid support, tender documentation, and proposal evaluation</li>
+                <li>Design coordination and technical documentation</li>
+                <li>Architectural and engineering drawing review and support</li>
+                <li>Procurement planning, contractor support, and vendor coordination</li>
+                <li>Cost estimation, budgeting, and financial control support</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+
+        <div class="row g-4 akx-pdpm-features">
+          <div class="col-sm-6 col-xl-3">
+            <article class="akx-pdpm-mini reveal h-100">
+              <div class="akx-pdpm-mini__icon">
+                <svg class="icon" aria-hidden="true">
+                  <use href="#icon-analytics"></use>
+                </svg>
+              </div>
+              <h3 class="akx-pdpm-mini__title">Planning &amp; Reporting</h3>
+              <p class="akx-pdpm-mini__text">
+                Schedule planning, progress monitoring, dashboards, stakeholder reporting, and delivery visibility across workstreams.
+              </p>
+            </article>
+          </div>
+
+          <div class="col-sm-6 col-xl-3">
+            <article class="akx-pdpm-mini reveal h-100">
+              <div class="akx-pdpm-mini__icon">
+                <svg class="icon" aria-hidden="true">
+                  <use href="#icon-code"></use>
+                </svg>
+              </div>
+              <h3 class="akx-pdpm-mini__title">Design &amp; Drawings</h3>
+              <p class="akx-pdpm-mini__text">
+                Design coordination, technical documentation, architectural support, and drawing review for aligned execution.
+              </p>
+            </article>
+          </div>
+
+          <div class="col-sm-6 col-xl-3">
+            <article class="akx-pdpm-mini reveal h-100">
+              <div class="akx-pdpm-mini__icon">
+                <svg class="icon" aria-hidden="true">
+                  <use href="#icon-database"></use>
+                </svg>
+              </div>
+              <h3 class="akx-pdpm-mini__title">BOQ &amp; Tender Support</h3>
+              <p class="akx-pdpm-mini__text">
+                BOQ development, bid documentation, proposal review, quantity analysis, and commercial readiness support.
+              </p>
+            </article>
+          </div>
+
+          <div class="col-sm-6 col-xl-3">
+            <article class="akx-pdpm-mini reveal h-100">
+              <div class="akx-pdpm-mini__icon">
+                <svg class="icon" aria-hidden="true">
+                  <use href="#icon-users"></use>
+                </svg>
+              </div>
+              <h3 class="akx-pdpm-mini__title">Procurement &amp; Coordination</h3>
+              <p class="akx-pdpm-mini__text">
+                Contractor and vendor coordination, procurement support, resource alignment, and quality-led delivery management.
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <div class="akx-pdpm-cta reveal">
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-8">
+              <p class="section-heading__kicker mb-2">Global execution support</p>
+              <h3 class="akx-pdpm-cta__title">
+                Looking for structured support across planning, design, procurement, and project delivery?
+              </h3>
+              <p class="akx-pdpm-cta__text mb-0">
+                Akshovex helps organizations improve delivery control, strengthen documentation, support procurement readiness, and achieve consistent outcomes across complex global initiatives.
+              </p>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="akx-pdpm-cta__actions">
+                <a class="btn btn--primary" href="contact.html">
+                  <span class="btn__label">Talk to an expert</span>
+                  <span class="btn__icon" aria-hidden="true">
+                    <svg class="icon">
+                      <use href="#icon-arrow"></use>
+                    </svg>
+                  </span>
+                </a>
+
+                <a class="btn btn--ghost" href="contact.html">
+                  <span class="btn__label">Request scope</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section">
       <div class="container">
         <div class="section-heading">
@@ -552,7 +1077,7 @@
             </div>
 
             <p class="footer-brand__text">
-              Premium technology consulting and engineering for cloud, cybersecurity, data platforms, and digital delivery.
+              Premium technology consulting, project delivery, and engineering services for cloud, cybersecurity, data platforms, infrastructure support, and digital transformation.
             </p>
           </div>
         </div>
@@ -573,6 +1098,7 @@
             <li><a href="services.html">Cloud &amp; SRE</a></li>
             <li><a href="services.html">Data &amp; AI</a></li>
             <li><a href="services.html">Cybersecurity</a></li>
+            <li><a href="services.html">Program &amp; Project Management</a></li>
           </ul>
         </div>
 
