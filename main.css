@@ -1999,23 +1999,86 @@ textarea.form-control {
 
 /* MOBILE */
 
+/* ================= MOBILE CHATBOT FINAL ================= */
+
 @media (max-width: 575px) {
+
   .ak-chatbot {
     right: 12px;
-    bottom: 140px;
-    width: calc(100vw - 24px);
+    left: 12px;
+    bottom: 110px;
+    width: auto;
+    max-width: none;
+    max-height: calc(100vh - 170px);
+    border-radius: 22px;
+    z-index: 1400;
   }
 
+  .ak-chatbot__body {
+    max-height: 260px;
+    overflow-y: auto;
+  }
+
+  .ak-chatbot__quick {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px 14px;
+  }
+
+  .ak-chatbot__chip {
+    font-size: 11px;
+    padding: 8px 12px;
+  }
+
+  .ak-chatbot__form {
+    display: flex;
+    gap: 8px;
+    padding: 12px;
+    border-top: 1px solid var(--border);
+  }
+
+  .ak-chatbot__input {
+    flex: 1;
+    min-width: 0;
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .ak-chatbot__send {
+    padding: 10px 14px;
+    font-size: 14px;
+    flex-shrink: 0;
+    border-radius: 12px;
+  }
+
+  /* FLOATING BUTTON (fixed position) */
   .ak-chatbot-toggle {
+    position: fixed;
     right: 16px;
-    bottom: 76px;
-    width: 76px;
-    height: 76px;
+    bottom: 16px;
+    width: 72px;
+    height: 72px;
+    z-index: 1200;
   }
 
   .ak-chatbot-toggle__logo {
-    width: 76px;
-    height: 76px;
+    width: 72px;
+    height: 72px;
+  }
+}
+
+
+/* EXTRA SMALL DEVICES POLISH */
+
+@media (max-width: 420px) {
+
+  .ak-chatbot__bubble {
+    max-width: 100%;
+  }
+
+  .ak-chatbot__quick {
+    justify-content: flex-start;
   }
 }
 /* =========================================================
