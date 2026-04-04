@@ -142,10 +142,19 @@ const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(sel
   const loader = $("#siteLoader");
   if (!loader) return;
 
+  const skipLoaderOnce = sessionStorage.getItem("akSkipLoaderOnce") === "true";
+
+  if (skipLoaderOnce) {
+    loader.classList.add("is-hidden");
+    sessionStorage.removeItem("akSkipLoaderOnce");
+    return;
+  }
+
   window.addEventListener("load", () => {
     loader.classList.add("is-hidden");
   });
 })();
+
 (function setupPageTransitionLoader() {
   const loader = $("#siteLoader");
   const loaderLogo = $(".site-loader__logo");
@@ -185,6 +194,7 @@ const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(sel
       );
 
       spin.onfinish = () => {
+        sessionStorage.setItem("akSkipLoaderOnce", "true");
         window.location.href = href;
       };
     });
