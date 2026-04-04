@@ -178,6 +178,7 @@ const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(sel
       event.preventDefault();
 
       loader.classList.remove("is-hidden");
+      loaderLogo.getAnimations().forEach((animation) => animation.cancel());
       loaderLogo.style.transform = "rotate(0deg)";
 
       const spin = loaderLogo.animate(
@@ -891,5 +892,5 @@ const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(sel
     }
   });
 })();
-<script>
+
 
