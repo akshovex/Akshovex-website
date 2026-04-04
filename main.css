@@ -299,22 +299,7 @@ small {
   gap: 14px;
 }
 
-.site-loader__spinner {
-  width: 36px;
-  height: 36px;
-  border: 3px solid rgba(47, 107, 255, 0.18);
-  border-top-color: var(--primary);
-  border-radius: 999px;
-  animation: spin 0.9s linear infinite;
-}
 
-.site-loader__brand {
-  font-family: "Poppins", sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--text);
-  letter-spacing: -0.02em;
-}
 
 .back-to-top {
   position: fixed;
@@ -1719,15 +1704,7 @@ textarea.form-control {
   }
 }
 
-/* =========================================================
-   KEYFRAMES
-   ========================================================= */
 
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 /* =========================================================
    LOGO IMAGE SIZE FIX
