@@ -839,16 +839,29 @@ const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(sel
   });
 })();
 <script>
-  const loader = document.getElementById("pageLoader");
+document.addEventListener("DOMContentLoaded", () => {
+  const loader = document.getElementById("siteLoader");
+  if (!loader) return;
 
-  document.querySelectorAll(".next-page-btn").forEach((link) => {
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
+  document.querySelectorAll('a[href]').forEach((link) => {
+    link.addEventListener("click", function () {
+      const href = this.getAttribute("href");
+
+      if (
+        !href ||
+        href.startsWith("#") ||
+        href.startsWith("mailto:") ||
+        href.startsWith("tel:") ||
+        this.target === "_blank"
+      ) {
+        return;
+      }
+
       loader.style.display = "flex";
-
-      setTimeout(() => {
-        window.location.href = this.href;
-      }, 300);
     });
   });
-</script>
+
+  window.addEventListener("pageshow", () => {
+    loader.style.display = "none";
+  });
+});
