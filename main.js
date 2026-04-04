@@ -146,7 +146,50 @@ const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(sel
     loader.classList.add("is-hidden");
   });
 })();
+(function setupPageTransitionLoader() {
+  const loader = $("#siteLoader");
+  const loaderLogo = $(".site-loader__logo");
 
+  if (!loader || !loaderLogo) return;
+
+  $$('a[href]').forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const href = link.getAttribute("href");
+
+      if (
+        !href ||
+        href.startsWith("#") ||
+        href.startsWith("mailto:") ||
+        href.startsWith("tel:") ||
+        link.target === "_blank"
+      ) {
+        return;
+      }
+
+      event.preventDefault();
+
+      loader.classList.remove("is-hidden");
+      loaderLogo.style.transform = "rotate(0deg)";
+
+      const spin = loaderLogo.animate(
+        [
+          { transform: "rotate(0deg)" },
+          { transform: "rotate(360deg)" }
+        ],
+        {
+          duration: 1200,
+          easing: "linear",
+          iterations: 1,
+          fill: "forwards"
+        }
+      );
+
+      spin.onfinish = () => {
+        window.location.href = href;
+      };
+    });
+  });
+})();
 /* =========================================================
    7. BACK TO TOP BUTTON
    ========================================================= */
@@ -839,41 +882,4 @@ const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(sel
   });
 })();
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const loader = document.getElementById("siteLoader");
-  if (!loader) return;
 
-  document.querySelectorAll('a[href]').forEach((link) => {
-    link.addEventListener("click", function (e) {
-      const href = this.getAttribute("href");
-
-      if (
-        !href ||
-        href.startsWith("#") ||
-        href.startsWith("mailto:") ||
-        href.startsWith("tel:") ||
-        this.target === "_blank"
-      ) {
-        return;
-      }
-
-      e.preventDefault();
-
-      loader.style.display = "flex";
-      loader.classList.remove("is-spinning");
-
-      void loader.offsetWidth; // restart animation once
-
-      loader.classList.add("is-spinning");
-
-      setTimeout(() => {
-        window.location.href = this.href;
-      }, 1200);
-    });
-  });
-
-  window.addEventListener("pageshow", () => {
-    loader.style.display = "none";
-    loader.classList.remove("is-spinning");
-  });
-});
