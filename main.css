@@ -2544,15 +2544,4 @@ html[data-theme="dark"] .benefit-card {
   animation: none !important;
 }
 
-.site-loader.is-spinning .site-loader__logo {
-  animation: siteLoaderSpin 1.2s linear 1 forwards !important;
-}
 
-@keyframes siteLoaderSpin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
