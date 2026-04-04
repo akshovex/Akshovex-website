@@ -2540,8 +2540,9 @@ html[data-theme="dark"] .benefit-card {
   width: 180px;
   height: 180px;
   object-fit: contain;
-  animation: siteLoaderSpin 1.2s linear infinite;
+  animation: siteLoaderSpin 1.2s linear 1;
   transform-origin: center;
+  animation-fill-mode: forwards;
 }
 
 @keyframes siteLoaderSpin {
