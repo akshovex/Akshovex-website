@@ -838,3 +838,17 @@ const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(sel
     }
   });
 })();
+<script>
+  const loader = document.getElementById("pageLoader");
+
+  document.querySelectorAll(".next-page-btn").forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      loader.style.display = "flex";
+
+      setTimeout(() => {
+        window.location.href = this.href;
+      }, 300);
+    });
+  });
+</script>
