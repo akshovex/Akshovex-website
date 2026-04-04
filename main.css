@@ -2537,12 +2537,16 @@ html[data-theme="dark"] .benefit-card {
 }
 
 .site-loader__logo {
-  width: 180px;
-  height: 180px;
-  object-fit: contain;
-  animation: siteLoaderSpin 1.2s linear 1;
-  transform-origin: center;
-  animation-fill-mode: forwards;
+  width: 180px !important;
+  height: 180px !important;
+  object-fit: contain !important;
+  transform-origin: center !important;
+
+  animation-name: siteLoaderSpin !important;
+  animation-duration: 1.2s !important;
+  animation-timing-function: linear !important;
+  animation-iteration-count: 1 !important;
+  animation-fill-mode: forwards !important;
 }
 
 @keyframes siteLoaderSpin {
