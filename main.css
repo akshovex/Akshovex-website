@@ -2535,12 +2535,3 @@ html[data-theme="dark"] .benefit-card {
     text-align: center;
   }
 }
-/* Logo rotate on page change */
-.brand__mark img {
-  transition: transform 0.8s ease;
-  transform-origin: center;
-}
-
-.brand.is-rotating .brand__mark img {
-  transform: rotate(360deg);
-}
