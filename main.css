@@ -2537,10 +2537,11 @@ html[data-theme="dark"] .benefit-card {
 }
 
 .site-loader__logo {
-  width: 80px;
-  height: 80px;
+  width: 180px;
+  height: 180px;
   object-fit: contain;
-  animation: siteLoaderSpin 1s linear infinite;
+  animation: siteLoaderSpin 1.2s linear infinite;
+  transform-origin: center;
 }
 
 @keyframes siteLoaderSpin {
