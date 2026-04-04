@@ -844,7 +844,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!loader) return;
 
   document.querySelectorAll('a[href]').forEach((link) => {
-    link.addEventListener("click", function () {
+    link.addEventListener("click", function (e) {
       const href = this.getAttribute("href");
 
       if (
@@ -857,11 +857,23 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
+      e.preventDefault();
+
       loader.style.display = "flex";
+      loader.classList.remove("is-spinning");
+
+      void loader.offsetWidth; // restart animation once
+
+      loader.classList.add("is-spinning");
+
+      setTimeout(() => {
+        window.location.href = this.href;
+      }, 1200);
     });
   });
 
   window.addEventListener("pageshow", () => {
     loader.style.display = "none";
+    loader.classList.remove("is-spinning");
   });
 });
