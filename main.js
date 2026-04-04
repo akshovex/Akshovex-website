@@ -838,3 +838,41 @@ const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(sel
     }
   });
 })();
+/* =========================================================
+   17. LOGO ROTATE BEFORE PAGE CHANGE
+   ========================================================= */
+(function setupLogoPageTransition() {
+  const brand = document.querySelector(".brand");
+  if (!brand) return;
+
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const pageLinks = Array.from(document.querySelectorAll('a[href]')).filter((link) => {
+    const href = link.getAttribute("href");
+
+    if (!href) return false;
+    if (href.startsWith("#")) return false;
+    if (href.startsWith("mailto:")) return false;
+    if (href.startsWith("tel:")) return false;
+    if (href.startsWith("javascript:")) return false;
+    if (link.hasAttribute("target")) return false;
+
+    return true;
+  });
+
+  pageLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const href = link.getAttribute("href");
+
+      if (!href || reducedMotion) return;
+
+      event.preventDefault();
+
+      brand.classList.add("is-rotating");
+
+      setTimeout(() => {
+        window.location.href = href;
+      }, 800);
+    });
+  });
+})();
